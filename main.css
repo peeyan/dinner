@@ -1,0 +1,24 @@
+.calendar_modal {position: fixed;
+left: 0%;
+top: 0%;
+right: 0%;
+height: auto;
+background-color: #fffacd;
+padding:2%;}
+
+.calendar-title {
+  text-align: center;
+}
+.month{position:relative;height: auto;
+	                        width :100%;
+												background-color: #ffffff;}
+	.is-today {
+		color: midnightblue;
+  background-color: #ffd700}
+td, th{
+  height: 50px;
+    text-align: center;
+  font-size: 70px;}
+.is-holiday{
+  color: red;
+}

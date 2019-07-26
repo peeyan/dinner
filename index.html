@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+<title>今日の晩御飯</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.js"
+  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
+  crossorigin="anonymous"></script>
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="/main.css">
+
+</head>
+
+<body bgcolor="#66cdaa">
+<h1>今日の晩御飯</h1>
+
+
+<button type="button" name="rice">米よろ</button>
+<button type="button" name="drink">飲み物よろ</button>
+<button type="button" name="calendar_open">カレンダー</button>
+
+<div class="calendar_modal">
+<thead>
+
+<table class="month">
+<tr>
+  <td colspan="7">
+  <h2 class="calendar-title"><span id="js-year"></span>年
+    <span id="js-month"></span>月</h2>
+  </td>
+</tr>
+  <tr>
+
+    <th>日</th>
+    <th>月</th>
+    <th>火</th>
+    <th>水</th>
+    <th>木</th>
+    <th>金</th>
+    <th>土</th>
+
+  </tr>
+</thead>
+
+<tbody id="js-calendar-body">
+</tbody>
+</table>
+
+
+</div>
+<script src="js/main.js" charset="utf-8"></script>
+
+</script>
+</body>
+
+</html>
