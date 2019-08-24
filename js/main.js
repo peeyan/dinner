@@ -77,7 +77,7 @@ function sendPush(bodyText) {
       body: bodyText,
       url: 'https://peeyan.github.io/dinner/',
       apikey: 'a46bac257dcf4bc0aa077386cb92c9e6',
-      icon: 'https://push7.jp/notifycation_icon.p'
+      icon: 'https://github.com/peeyan/dinner/blob/master/erizabesu.png'
     };
 
     $.ajax({
