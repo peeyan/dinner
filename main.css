@@ -44,7 +44,6 @@ h1{
 
 #calendar_close{
   height: 60px;
-  width: 100px;
   position: relative;
   left: 40%;
 }
@@ -60,4 +59,25 @@ h1{
 }
 .btn-dinner:active {
 
+}
+
+.btn-circle-3d {
+  display: inline-block;
+  text-decoration: none;
+  background: #00008b;
+  color: #FFF;
+  width: 120px;
+  line-height: 65px;
+  border-radius: 25%;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+  transition: .2s;
+}
+
+.btn-circle-3d:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  border-bottom: none;
 }
