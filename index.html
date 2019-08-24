@@ -3,56 +3,60 @@
 
 <head>
   <meta charset="UTF-8" />
-<title>今日の晩御飯</title>
-<script
-  src="https://code.jquery.com/jquery-3.4.1.slim.js"
-  integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI="
-  crossorigin="anonymous"></script>
-<link rel="shortcut icon" href="favicon.ico">
-<link rel="stylesheet" type="text/css" href="/main.css">
-
+  <title>今日の晩御飯</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 </head>
 
 <body bgcolor="#66cdaa">
-<h1>今日の晩御飯</h1>
+  <h1>今日の晩御飯</h1>
 
+  <div class="switch">
+    <a class="btn-dinner btn-dinner-drink" id="drink-help">
+      <i class="fas fa-wine-bottle fa-5x"></i>
+    </a>
+    <a class="btn-dinner btn-dinner-calendar" id="calendar_open">
+      <i class="far fa-calendar-alt fa-5x"></i>
+    </a>
+    <a class="btn-dinner btn-dinner-rice" id="rice-help">
+      <i class="fas fa-utensils fa-5x"></i>
+    </a>
 
-<button type="button" name="rice">米よろ</button>
-<button type="button" name="drink">飲み物よろ</button>
-<button type="button" name="calendar_open">カレンダー</button>
+  </div>
 
-<div class="calendar_modal">
-<thead>
+  <div class="calendar_modal">
+    <thead>
 
-<table class="month">
-<tr>
-  <td colspan="7">
-  <h2 class="calendar-title"><span id="js-year"></span>年
-    <span id="js-month"></span>月</h2>
-  </td>
-</tr>
-  <tr>
+      <table class="month">
+        <tr>
+          <td colspan="7">
+            <h2 class="calendar-title"><span id="js-year"></span>年
+              <span id="js-month"></span>月</h2>
+            </td>
+          </tr>
+          <tr>
 
-    <th>日</th>
-    <th>月</th>
-    <th>火</th>
-    <th>水</th>
-    <th>木</th>
-    <th>金</th>
-    <th>土</th>
+            <th>日</th>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+            <th>土</th>
 
-  </tr>
-</thead>
+          </tr>
+        </thead>
 
-<tbody id="js-calendar-body">
-</tbody>
-</table>
+        <tbody id="js-calendar-body">
+        </tbody>
+      </table>
+      <button type="button" id="calendar_close">閉じる</button>
 
+    </div>
+    <script src="js/main.js" charset="utf-8"></script>
 
-</div>
-<script src="js/main.js" charset="utf-8"></script>
+  </body>
 
-</script>
-</body>
-
-</html>
+  </html>

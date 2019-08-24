@@ -4,7 +4,8 @@ top: 0%;
 right: 0%;
 height: auto;
 background-color: #fffacd;
-padding:2%;}
+padding:2%;
+display:none;}
 
 .calendar-title {
   text-align: center;
@@ -16,9 +17,49 @@ padding:2%;}
 		color: midnightblue;
   background-color: #ffd700}
 td, th{
-  height: 50px;
+  height: 200px;
     text-align: center;
   font-size: 70px;}
 .is-holiday{
   color: red;
+}
+.fullday{
+  font-size: 30px;
+  vertical-align: top;
+}
+p{
+  margin: 0px;
+}
+h1{
+  position:absolute;
+  left: 40%;
+  bottom: 60%
+}
+
+
+.switch{
+  text-align: center;
+  position: absolute;
+  bottom: 50%;
+  left: 20%;
+}
+
+#calendar_close{
+  height: 60px;
+  width: 100px;
+  position: relative;
+  left: 40%;
+}
+
+.btn-dinner {
+  display: inline-block;
+  text-decoration: none;
+  margin:60px;
+  color:white;
+  text-align: center;
+  font-weight: bold;
+  transition: .3s;
+}
+.btn-dinner:active {
+
 }

@@ -1,10 +1,10 @@
-var $window = $(window);
-var $year = $('#js-year');
-var $month = $('#js-month');
-var $tbody = $('#js-calendar-body');
+let $window = $(window);
+let $year = $('#js-year');
+let $month = $('#js-month');
+let $tbody = $('#js-calendar-body');
 
-var today = new Date();
-var currentYear = today.getFullYear(),
+let today = new Date();
+let currentYear = today.getFullYear(),
     currentMonth = today.getMonth();
 
 $window.on('load',function(){
@@ -13,35 +13,35 @@ $window.on('load',function(){
 });
 
 function calendarBody(year, month, today){
-  var todayYMFlag = today.getFullYear() === year && today.getMonth() === month ? true : false; // 本日の年と月が表示されるカレンダーと同じか判定
-  var startDate = new Date(year, month, 1); // その月の最初の日の情報
-  var endDate  = new Date(year, month + 1 , 0); // その月の最後の日の情報
-  var startDay = startDate.getDay();// その月の最初の日の曜日を取得
-  var endDay = endDate.getDate();// その月の最後の日の曜日を取得
-  var textSkip = true; // 日にちを埋める用のフラグ
-  var textDate = 1; // 日付(これがカウントアップされます)
-  var tableBody =''; // テーブルのHTMLを格納する変数
+  let todayYMFlag = today.getFullYear() === year && today.getMonth() === month ? true : false;
+  let startDate = new Date(year, month, 1);
+  let endDate  = new Date(year, month + 1 , 0);
+  let startDay = startDate.getDay();
+  let endDay = endDate.getDate();
+  let textSkip = true;
+  let textDate = 1;
+  let tableBody ='';
 
-  for (var row = 0; row < 6; row++){
-    var tr = '<tr>';
+  for (let row = 0; row < 6; row++){
+    let tr = '<tr>';
 
-    for (var col = 0; col < 7; col++) {
+    for (let col = 0; col < 7; col++) {
       if (row === 0 && startDay === col){
         textSkip = false;
       }
       if (textDate > endDay) {
         textSkip = true;
       }
-      var addClass = "";
+      let addClass = "fullday ";
       if(todayYMFlag && textDate === today.getDate()) {
       addClass=addClass+'is-today ';
       }
-      var dayOfWeek=new Date(year, month, textDate).getDay();
+      let dayOfWeek=new Date(year, month, textDate).getDay();
       if(dayOfWeek==0 || dayOfWeek==6) {
       addClass=addClass+'is-holiday ';
       }
-      var textTd = textSkip ? ' ' : textDate++;
-      var td = '<td class="'+addClass+'">'+textTd+'</td>';
+      let textTd = textSkip ? ' ' : textDate++;
+      let td = '<td class="'+addClass+'"><p>'+textTd+'</p></td>';
       tr += td;
     }
     tr += '</tr>';
@@ -53,3 +53,42 @@ function calendarBody(year, month, today){
 function calendarHeading(year, month){
   $year.text(year);
   $month.text(month + 1);}
+
+$('#calendar_open').on('click',function(){
+$('.calendar_modal').css('display','block')
+})
+
+$('#calendar_close').on('click',function(){
+$('.calendar_modal').css('display','none')
+})
+
+
+$('#drink-help').on('click',function(){
+  sendPush('飲み物おなしゃーっす！！');
+})
+
+$('#rice-help').on('click',function(){
+  sendPush('米おなしゃーっす！！');
+})
+
+function sendPush(bodyText) {
+    const data = {
+      title: '晩飯アプリ',
+      body: bodyText,
+      url: 'https://peeyan.github.io/dinner/',
+      apikey: 'a46bac257dcf4bc0aa077386cb92c9e6',
+      icon: 'https://push7.jp/notifycation_icon.p'
+    };
+
+    $.ajax({
+      url:'https://api.push7.jp/api/v1/28a62230d0a948c2bd8b47a0867e8f88/send',
+      type:'POST',
+      data: JSON.stringify(data),
+      dataType: "json",
+      contentType : "application/json"
+    }).done( (data) => {
+      console.log(data);
+    }).fail( (data) => {
+      console.log(data);
+    })
+}
