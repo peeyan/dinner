@@ -1,6 +1,4 @@
-.calendar_modal {position: fixed;
-left: 0%;
-top: 0%;
+.calendar_modal {
 right: 0%;
 height: auto;
 background-color: #fffacd;
@@ -17,7 +15,7 @@ display:none;}
 		color: midnightblue;
   background-color: #ffd700}
 td, th{
-  height: 200px;
+  height: 135px;
     text-align: center;
   font-size: 70px;}
 .is-holiday{
