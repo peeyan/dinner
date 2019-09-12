@@ -7,9 +7,29 @@ let today = new Date();
 let currentYear = today.getFullYear(),
     currentMonth = today.getMonth();
 
+const dinnerDate = {};
+
 $window.on('load',function(){
   calendarHeading(currentYear, currentMonth);
   calendarBody(currentYear, currentMonth, today);
+  const firebaseConfig = {
+    apiKey: "AIzaSyDgRTnAHi5eA_M3uFjRTPVv0xP6Iqsw-1w",
+    authDomain: "dinner-5d81a.firebaseapp.com",
+    databaseURL: "https://dinner-5d81a.firebaseio.com",
+    projectId: "dinner-5d81a",
+    storageBucket: "",
+    messagingSenderId: "504639007831",
+    appId: "1:504639007831:web:c112c5ef92d5111f"
+  };
+  firebase.initializeApp(firebaseConfig);
+  firebase.firestore().collection('dinner-date').get().then(
+    function(snapshot){
+      snapshot.docs.forEach(function(doc) {
+        dinnerDate[doc.id] = doc.data();
+      });
+      
+    }
+  );
 });
 
 function calendarBody(year, month, today){
